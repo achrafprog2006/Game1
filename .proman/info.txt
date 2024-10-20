@@ -1,0 +1,5 @@
+[name: Game1]
+[type: 0]
+[git: n]
+[path: /home/achraf0x/cpp_apps/Game1]
+----

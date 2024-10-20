@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Game1",
+            "type": "lldb",  // Use cppdbg for GDB
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Game1",  // Adjust to your executable path
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "env": {
+                "XDG_RUNTIME_DIR": "/tmp"  // Optional to avoid warnings
+            },
+            "preLaunchTask": "build"  // Ensure this matches the label in tasks.json
+        }
+    ]
+}
