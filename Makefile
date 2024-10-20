@@ -5,10 +5,11 @@ LIBS = -lglfw -lGLEW -lGL -lm
 
 # Source files
 SRCS = $(wildcard src/*.cpp)
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(patsubst src/%.cpp, $(OBJDIR)/%.o, $(SRCS))  # Place .o files in the bin directory
+OBJDIR = bin
 
 # Output executable name
-TARGET =bin/Game1
+TARGET = build/Game1
 
 # Default target
 all: $(TARGET)
@@ -17,8 +18,9 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) $(OBJS) -o $(TARGET) $(LIBS)
 
-# Compile each .cpp file into a .o file
-%.o: src/%.cpp
+# Compile each .cpp file into a .o file in the OBJDIR
+$(OBJDIR)/%.o: src/%.cpp
+	@mkdir -p $(OBJDIR)  # Create OBJDIR if it doesn't exist
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean up build files

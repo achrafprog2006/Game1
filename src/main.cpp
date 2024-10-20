@@ -36,12 +36,10 @@ int main() {
     while (!glfwWindowShouldClose(window)) {
         // Render
         glClear(GL_COLOR_BUFFER_BIT);
-        glClearColor(std::abs(std::sin(t)),0,0,1);
-        // Swap buffers and poll events
+        glClearColor(std::abs(std::sin(t)),std::abs(std::tan(t)),std::abs(std::cos(t)),1);
         glfwSwapBuffers(window);
         glfwPollEvents();
-        t+=0.1f;
-        std::cout<<"ha";
+        t+=0.001f;
     }
 
     glfwDestroyWindow(window);

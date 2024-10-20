@@ -5,7 +5,7 @@
             "name": "Run Game1",
             "type": "lldb",  // Use cppdbg for GDB
             "request": "launch",
-            "program": "${workspaceFolder}/bin/Game1",  // Adjust to your executable path
+            "program": "${workspaceFolder}/build/Game1",  // Adjust to your executable path
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
